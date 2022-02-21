@@ -62,6 +62,7 @@ function SecondVariant() {
                 className="a"
                 onChange={(e) => setFirst(e.target.value)}
                 value={first}
+                type="number"
               />
               <Alert severity='info' className='alrt'>
               Трябва да е { '<' } 64мм
@@ -92,6 +93,8 @@ function SecondVariant() {
                 className="a"
                 onChange={(e) => setSecond(e.target.value)}
                 value={second}
+                type="number"
+
               />
             <Alert severity='info' className='alrt'>
             Трябва да е { '>=' } 64мм
