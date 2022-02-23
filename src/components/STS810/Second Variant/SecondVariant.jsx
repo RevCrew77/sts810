@@ -2,8 +2,8 @@ import { Alert } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import twolabel from '../../pictures/sts810-2labels.png';
-import "../Second Variant/SecondVariant.css";
+import twolabel from '../../../pictures/sts810-2labels.png';
+import "./SecondVariant.css";
 import CountUp from 'react-countup';
 
 function SecondVariant() {
@@ -41,7 +41,6 @@ function SecondVariant() {
     toast.info('Машината ще стартира с по-дългия етикет', {position: toast.POSITION.TOP_CENTER});
   },[])
 
-  // const notify = () => 
 
   return (
     <div className="calc">

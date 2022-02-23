@@ -1,7 +1,7 @@
 import { Alert } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import twolabel from '../../pictures/sts810-2labels.png';
-import "../FirstVariant/FirstVariant.css";
+import twolabel from '../../../pictures/sts810-2labels.png';
+import "./FirstVariant.css";
 import CountUp from 'react-countup';
 
 function FirstVariant() {

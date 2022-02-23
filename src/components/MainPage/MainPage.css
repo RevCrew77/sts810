@@ -1,0 +1,59 @@
+.app{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    align-content: center;
+	margin-left: 10rem;
+	margin-top: 2px;
+}
+
+.sts808{
+    background-color: #FFFFFF;
+    height: 45rem;
+    width: 48%;
+
+}
+
+.sts810{
+    height: 45rem;
+    width: 48%;
+    background-color: #FFFFFF;
+
+}
+
+.sts816{
+	height: 45rem;
+    width: 48%;
+    background-color: #FFFFFF;
+
+}
+
+.link{
+	font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #fbfbfb;
+    height: 482px;
+    width: 410px;
+    margin: 19px 0px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.25s ease 0s;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-decoration: none;
+	
+}
+
+.link:hover{
+	background-color: #F5F5F5;
+}
+
+h3 {
+	font-size: 30px;
+	line-height: 45px;
+	color: #ED1C24;
+	font-weight: 400;
+}

@@ -1,0 +1,43 @@
+.menu{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around; 
+    height: 32rem;
+    padding-top: 5rem;
+}
+
+.labelMach{
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #F5F5F5;
+    height: 482px;
+    width: 410px;
+    margin: 15px 0px 0px 0px;
+    padding: 10px 20px 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.25s ease 0s;
+    box-sizing: border-box;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.labelMach:hover {
+    background-color: #eeeeee;
+}
+
+
+.imgWrap img{
+    margin-top: 30px;
+    background: 50% 50%;
+    height: 366px;
+    width: 366px;
+    position: absolute;
+    display: block;
+    transform: matrix(0,911466, 0, 0, 0.911466, 0, 0);
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid grey
+}

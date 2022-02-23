@@ -17,6 +17,7 @@ function Navbar() {
             <img src={en} alt="en" className="en" />
           </a>
         </section>
+        
       </div>
   )
 }
