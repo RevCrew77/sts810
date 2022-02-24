@@ -45,11 +45,11 @@ function SecondVariant() {
   return (
     <div className="calc">
       <form action="submit" className="forma">
-        <img src={twolabel} alt="label" className='imageLabel' /> 
+        <img src={twolabel} alt="label" className='imageLabelC' /> 
         <div className="divDescr">
-          <span className="descr">Лента с етикети</span>
-          <span className="descr1">Етикет преден</span>
-          <span className="descr2">Етикет заден</span>
+          <span className="descrB">Лента с етикети</span>
+          <span className="descr1B">Етикет преден</span>
+          <span className="descr2B">Етикет заден</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">

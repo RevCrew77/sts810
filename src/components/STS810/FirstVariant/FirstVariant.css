@@ -31,7 +31,7 @@
     margin-left: 3rem;
 }
 
-.imageLabel{
+.imageLabelA{
     height: 385px;
     width: 244px;
     padding: 20px 0 0 0;
@@ -42,14 +42,14 @@
     position: relative;
 }
 
-.divDescr{
+.divDescrA{
     position: absolute;
     left: 31rem;
     display: flex;
     flex-direction: column;
 }
 
-.descr{
+.descrA{
     text-align: center;
     word-spacing: 0px;
     color: #4d95d0;
@@ -62,13 +62,13 @@
     
 }
 
-.descr1{
+.descr1A{
     position: absolute;
     top: 12rem;
     color: #4d95d0;
 }
 
-.descr2{
+.descr2A{
     position:absolute;
     top: 20rem;
     color: #4d95d0;

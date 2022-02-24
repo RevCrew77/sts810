@@ -1,7 +1,7 @@
 *{
     margin: 0;
 } 
-.calc{
+.calcS{
     font-family: Roboto, Arial;
     font-size: 16px;
     line-height: 24px;
@@ -10,7 +10,7 @@
     display: flex;
     justify-self: center;
     align-items: center;
-    padding-top: 7rem;
+    padding-top: 3rem;
 }
 
 .labelInpt{
@@ -31,8 +31,8 @@
     margin-left: 3rem;
 }
 
-.imageLabelC{
-    height: 385px;
+.imageLabel{
+    height: 620px;
     width: 244px;
     padding: 20px 0 0 0;
     max-width: 100%;
@@ -49,7 +49,7 @@
     flex-direction: column;
 }
 
-.descrB{
+.descr{
     text-align: center;
     word-spacing: 0px;
     color: #4d95d0;
@@ -62,16 +62,18 @@
     
 }
 
-.descr1B{
+.descr1{
     position: absolute;
-    top: 12rem;
+    top: 14rem;
     color: #4d95d0;
+    left: 2rem;
 }
 
-.descr2B{
-    position:absolute;
-    top: 20rem;
+.descr2{
+    position: absolute;
+    top: 25rem;
     color: #4d95d0;
+    left: 2rem;
 }
 
 .forma{
@@ -121,10 +123,7 @@
     padding: 10px 0px 40px 0px;
 }
 
-.alrt{
-    margin-top: -20px;
-}
-
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

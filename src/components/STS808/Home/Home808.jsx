@@ -12,8 +12,8 @@ function Home808() {
        <p className="paragraph">Изчисляване параметрите за етикираща машина STS 810</p>
 
        <section className="buttons">
-       <Link to="/labeling-machines/STS808/variant-a" className="label1">1-ви вариант</Link>
-       <Link to="/variant-b" className="label2">2-ри вариант</Link>
+       <Link to="/labeling-machines/STS808/variant-a" className="label1">1 етикет</Link>
+       <Link to="/variant-b" className="label2">2 етикета</Link>
        </section>
 
 

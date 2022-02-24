@@ -7,7 +7,9 @@ import FirstVariant from "./components/STS810/FirstVariant/FirstVariant";
 import SecondVariant from "./components/STS810/Second Variant/SecondVariant";
 import MainPage from "./components/MainPage/MainPage";
 import Home808 from "./components/STS808/Home/Home808";
+import OneLabel from "./components/STS808/FirstVariant/OneLabel";
 import Menu from "./components/Menu";
+import ThirdVariant from "./components/STS810/ThirdVariant/ThirdVariant";
 
 function App() {
   return (
@@ -19,9 +21,11 @@ function App() {
       <Route exact path="/" element={<Menu />} />
         <Route exact path="/labeling-machines" element={<MainPage />} />
         <Route exact path="/labeling-machines/STS808" element={<Home808 />} />
+          <Route exact path="/labeling-machines/STS808/variant-a" element={<OneLabel />} />
         <Route exact path="/labeling-machines/STS810" element={<Home />} />
           <Route exact path="/labeling-machines/STS810/variant-a" element={<FirstVariant />} />
-          <Route exact path="/labeling-machines/STS810/variant-b" element={<SecondVariant />} />
+          <Route exact path="/labeling-machines/STS810/variant-b" element={<SecondVariant />} /> 
+          <Route exact path="/labeling-machines/STS810/variant-c" element={<ThirdVariant />} />
       </Routes>
       </div>
 
