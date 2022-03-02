@@ -1,21 +1,21 @@
-.header{
-    background-color: #f5f5f5;
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-    height: 248px;
-  }
-  
-  .logo{
-    height: 171px;
-    margin: 20px;
-  }
-  
-  .lang{
-    margin-top: 87px;
-    margin-right: 20px;
-  }
-  
-  .bg{
-    margin-right: 20px;
-  }
+.header {
+  background-color: #f5f5f5;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  height: 248px;
+}
+
+.logo {
+  height: 171px;
+  margin: 20px;
+}
+
+.lang {
+  margin-top: 87px;
+  margin-right: 20px;
+}
+
+.bg {
+  margin-right: 20px;
+}

@@ -1,89 +1,88 @@
-import { Alert } from '@mui/material';
-import React, { useState, useEffect } from 'react';
-import twolabel from '../../../pictures/sts810-2labels.png';
-import "./FirstVariant.css";
-import CountUp from 'react-countup';
+import { Alert } from '@mui/material'
+import React, { useState, useEffect } from 'react'
+import onelabel from '../../../pictures/sts810-1label.png'
+import './FirstVariant.css'
+import CountUp from 'react-countup'
 
 function FirstVariant() {
-  const [first, setFirst] = useState("");
-  const [empty, setEmpty] = useState("");
-  const [second, setSecond] = useState("");
+  const [first, setFirst] = useState('')
+  const [empty, setEmpty] = useState('')
 
-  const [resultA, setResultA] = useState("");
-  const [resultB, setResultB] = useState("");
+  const [resultA, setResultA] = useState('')
 
   useEffect(() => {
-    const _first = +first || 0;
-    const _second = +second || 0;
-    const _empty = +empty || 0;
+    const _first = +first
+    const _empty = +empty
 
-    const _resultA = 64 + _empty / 2;
-    const _resultB = _second + _empty / 2;
+    if (_empty !== 0 && _first !== 0) {
+      let x1 = 64 - _first - _empty / 2
+      let offset = 0
 
-    if (_first >= 64 && _resultA){
-      setResultA(_resultA);
-    } else{
-     setResultA("");
+      if (x1 < 0) {
+        offset = 0
+      } else if (x1 === 0) {
+        offset = 0
+      } else {
+        let x2 = x1 - _first - _empty
+
+        if (x2 < 0) {
+          offset = x1
+        } else if (x2 === 0) {
+          offset = 1
+        } else {
+          let x3 = x2 - _first - _empty
+
+          if (x3 < 0) {
+            offset = x2
+          } else if (x3 === 0) {
+            offset = 1
+          } else {
+            let x4 = x3 - _first - _empty
+
+            if (x4 < 0) {
+              offset = x3
+            } else if (x4 === 0) {
+              offset = 1
+            } else {
+              offset = x4
+            }
+          }
+        }
+      }
+      if (offset === 0) {
+        offset = 1
+      }
+      Math.round(offset)
+
+      setResultA(offset)
     }
-    if (_resultB){
-      setResultB(_resultB);
-    } else{
-      setResultB("");
-    } 
-  }, [first, second, empty]);
+  }, [first, empty])
 
   return (
     <div className="calc">
       <form action="submit" className="forma">
-        <img src={twolabel} alt="label" className='imageLabelA' /> 
+        <img src={onelabel} alt="label" className="imageLabelA" />
         <div className="divDescr">
           <span className="descrA">Лента с етикети</span>
           <span className="descr1A">Етикет преден</span>
-          <span className="descr2A">Етикет заден</span>
         </div>
         <div className="labelcontainer">
-          <div className="labelcalc">
-            <span className="label">L1 =</span>
-            <div className="labelInpt">
-              <label htmlFor="l1">Дължина преден етикет</label>
-              <input
-                name="l1"
-                className="a"
-                onChange={(e) => setFirst(e.target.value)}
-                value={first}
-                type="number"
-                />
-              <Alert severity='info' className='alrt'>
-                Трябва да е { '>=' } 64мм
-              </Alert>
-            </div>
-            <span className="mm">mm</span>
-          </div>
           <div className="labelcalc">
             <span className="label">L0 =</span>
             <div className="labelInpt">
               <label htmlFor="l0">Процеп между етикетите</label>
-              <input
-                name="l0"
-                className="a"
-                onChange={(e) => setEmpty(e.target.value)}
-                value={empty}
-                type="number"
-              />
+              <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
+              {/* <Alert severity='info' className='alrt'>
+                Трябва да е { '>=' } 64мм
+              </Alert> */}
             </div>
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L2 =</span>
+            <span className="label">L =&nbsp;&nbsp;</span>
             <div className="labelInpt">
-              <label htmlFor="l2">Дължина заден етикет</label>
-              <input
-                name="l2"
-                className="a"
-                onChange={(e) => setSecond(e.target.value)}
-                value={second}
-                type="number"
-              />
+              <label htmlFor="l">Дължина на етикетите</label>
+              <input name="l" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
             </div>
             <span className="mm">mm</span>
           </div>
@@ -91,16 +90,14 @@ function FirstVariant() {
       </form>
       <div className="result">
         <div className="offset">
-          <span className="offsetres">Офсет стоп 1</span>
-          <span className="offres"><CountUp end={resultA} duration={1} /> mm</span>
-        </div>
-        <div className="offset">
-          <span className="offsetres">Офсет стоп 2</span>
-          <span className="offres"><CountUp end={resultB} duration={1} /> mm</span>
+          <span className="offsetres">Офсет стоп </span>
+          <span className="offres">
+            <CountUp end={resultA} duration={1} /> mm
+          </span>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default FirstVariant
