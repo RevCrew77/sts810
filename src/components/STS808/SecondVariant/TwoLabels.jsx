@@ -54,9 +54,7 @@ function TwoLabels() {
           }
         }
       }
-      if (offset === 100) {
-        offset = 97
-      }
+      
       setResultA(offset)
 
       let y1 = 100 - _first - _empty / 2
@@ -92,19 +90,18 @@ function TwoLabels() {
       }
 
       if (offset2 === 0) {
-        offset2 = 1;
+        offset2 = 1
       }
-      if (_second === 100) {
-        offset2 = 97;
-      }
+      
 
       setResultB(offset2)
 
       let l3 = (_diameter * 3.1416 - _first - _second) / 20
-      
-      setDistance(l3.toFixed(2))
+
+      setDistance(l3)
 
       let T = (_diameter * 3.1416) / 88.2
+      console.log(T)
 
       setTime(Number.parseFloat(T).toFixed(2))
     }
@@ -127,7 +124,7 @@ function TwoLabels() {
               <label htmlFor="l1">Дължина преден етикет</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
               <Alert severity="info" className="alrt">
-                Трябва да е {'<'} 64мм
+                25 {'<'} L1 {'<'} 520
               </Alert>
             </div>
             <span className="mm">mm</span>
@@ -137,6 +134,9 @@ function TwoLabels() {
             <div className="labelInpt">
               <label htmlFor="l0">Процеп между етикетите</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
+              <Alert severity="info" className="alrt">
+                2,5 {'<'} L0 {'<'} 60
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
@@ -146,7 +146,7 @@ function TwoLabels() {
               <label htmlFor="l2">Дължина заден етикет</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
               <Alert severity="info" className="alrt">
-                Трябва да е {'>='} 64мм
+                25 {'<'} L2 {'<'} 520
               </Alert>
             </div>
             <span className="mm">mm</span>
@@ -155,7 +155,16 @@ function TwoLabels() {
             <span className="label">D =&nbsp;&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="D">Диаметър на съда</label>
-              <input name="D" className="a" onChange={(e) => setDiameter(e.target.value)} value={diameter} type="number" />
+              <input
+                name="D"
+                className="a"
+                onChange={(e) => setDiameter(e.target.value)}
+                value={diameter}
+                type="number"
+              />
+              <Alert severity="info" className="alrt">
+                20 {'<'} D {'<'} 180
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>

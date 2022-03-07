@@ -29,7 +29,7 @@ function App() {
           </Routes>
         </div>
 
-        <div class="footer">&copy; 2022 STSMachines</div>
+        <div className="footer">&copy; 2022 STSMachines</div>
       </div>
     </Router>
   )

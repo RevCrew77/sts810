@@ -52,7 +52,7 @@ function FirstVariant() {
       if (offset === 0) {
         offset = 1
       }
-      Math.round(offset)
+      
 
       setResultA(offset)
     }

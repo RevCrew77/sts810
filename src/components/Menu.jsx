@@ -12,7 +12,7 @@ function Menu() {
           <h3>Етикиращи машини</h3>
         </span>
         <span className="imgWrap">
-          <img src={labelmachine} alt="lalbel-machine" />
+          <img src={labelmachine} alt="lalbel-machine" className='image' />
         </span>
       </Link>
 
@@ -21,7 +21,7 @@ function Menu() {
           <h3>Дозиращи машини</h3>
         </span>
         <span className="imgWrap">
-          <img src={dosingmachine} alt="dosing-machine" />
+          <img src={dosingmachine} alt="dosing-machine" className='image' />
         </span>
       </Link>
     </div>

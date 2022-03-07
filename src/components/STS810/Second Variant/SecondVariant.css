@@ -49,7 +49,7 @@
   flex-direction: column;
 }
 
-.descrB {
+.descrBB {
   text-align: center;
   word-spacing: 0px;
   color: #4d95d0;
@@ -61,15 +61,15 @@
   box-sizing: border-box;
 }
 
-.descr1B {
+.descr1BB {
   position: absolute;
-  top: 12rem;
+  top: 11rem;
   color: #4d95d0;
 }
 
-.descr2B {
+.descr2BB {
   position: absolute;
-  top: 20rem;
+  top: 18rem;
   color: #4d95d0;
 }
 

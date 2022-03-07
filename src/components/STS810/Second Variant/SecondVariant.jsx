@@ -23,6 +23,7 @@ function SecondVariant() {
       if (_first + _second + _empty >= 67) {
         setResultA(64 - (_second + _empty / 2))
         setResultB(_second + _empty / 2)
+        toast.info('Машината трябва да стартира с по-дългия етикет', { position: toast.POSITION.TOP_CENTER })
       } else if (61 < _first + _second + _empty < 67) {
         setResultA(_empty / 2)
         setResultB(_second + _empty / 2)
@@ -50,9 +51,9 @@ function SecondVariant() {
       <form action="submit" className="forma">
         <img src={twolabel} alt="label" className="imageLabelC" />
         <div className="divDescr">
-          <span className="descrB">Лента с етикети</span>
-          <span className="descr1B">Етикет преден</span>
-          <span className="descr2B">Етикет заден</span>
+          <span className="descrBB">Лента с етикети</span>
+          <span className="descr1BB">Етикет преден</span>
+          <span className="descr2BB">Етикет заден</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
@@ -60,9 +61,7 @@ function SecondVariant() {
             <div className="labelInpt">
               <label htmlFor="l1">Дължина преден етикет</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
-              <Alert severity="info" className="alrt">
-                Трябва да е {'<'} 64мм
-              </Alert>
+              
             </div>
             <span className="mm">mm</span>
           </div>
@@ -79,9 +78,6 @@ function SecondVariant() {
             <div className="labelInpt">
               <label htmlFor="l2">Дължина заден етикет</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
-              <Alert severity="info" className="alrt">
-                Трябва да е {'>='} 64мм
-              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
