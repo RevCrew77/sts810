@@ -19,7 +19,7 @@ function FirstVariant() {
       let offset = 0
 
       if (x1 < 0) {
-        offset = 0
+        offset = 64
       } else if (x1 === 0) {
         offset = 0
       } else {
@@ -72,9 +72,9 @@ function FirstVariant() {
             <div className="labelInpt">
               <label htmlFor="l0">Процеп между етикетите</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
-              {/* <Alert severity='info' className='alrt'>
-                Трябва да е { '>=' } 64мм
-              </Alert> */}
+              <Alert severity="info" className="alrt">
+                2.5 {'<'} L0 {'<'} 60mm
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
@@ -83,6 +83,9 @@ function FirstVariant() {
             <div className="labelInpt">
               <label htmlFor="l">Дължина на етикетите</label>
               <input name="l" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
+              <Alert severity="info" className="alrt">
+                25 {'<'} L {'<'} 120mm
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>

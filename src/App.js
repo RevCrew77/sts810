@@ -10,6 +10,7 @@ import Home808 from './components/STS808/Home/Home808'
 import OneLabel from './components/STS808/FirstVariant/OneLabel'
 import Menu from './components/Menu'
 import TwoLabels from './components/STS808/SecondVariant/TwoLabels'
+import DosingMachines from './components/DosingMachines/DosingMachines'
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/labeling-machines/STS810" element={<Home />} />
             <Route exact path="/labeling-machines/STS810/1-label" element={<FirstVariant />} />
             <Route exact path="/labeling-machines/STS810/2-labels" element={<SecondVariant />} />
+            <Route exact path="/dosing-machines" element={<DosingMachines />} />
           </Routes>
         </div>
 

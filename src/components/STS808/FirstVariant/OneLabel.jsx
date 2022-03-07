@@ -6,12 +6,12 @@ import './OneLabel.css'
 import { toast } from 'react-toastify'
 
 function OneLabel() {
-  const [empty, setEmpty] = useState(0)
-  const [first, setFirst] = useState(0)
-  const [diameter, setDiameter] = useState(0)
+  const [empty, setEmpty] = useState("")
+  const [first, setFirst] = useState("")
+  const [diameter, setDiameter] = useState("")
 
-  const [resultA, setResultA] = useState(0)
-  const [time, setTime] = useState(0)
+  const [resultA, setResultA] = useState("")
+  const [time, setTime] = useState("")
 
   useEffect(() => {
     const _empty = +empty
@@ -52,7 +52,7 @@ function OneLabel() {
       setResultA(offset)
       let T = (_diameter * 3.1416) / 88.2
 
-      setTime((Number(Math.round(parseFloat(T + 'e' + 2)) + 'e-' + 2)).toFixed(2))
+      setTime(T.toFixed(2))
     }
   }, [first, diameter, empty])
 
@@ -107,6 +107,9 @@ function OneLabel() {
                 value={diameter}
                 type="number"
               />
+              <Alert severity="info" className="alrt">
+                25 {'<'} D {'<'} 160мм
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
@@ -125,7 +128,7 @@ function OneLabel() {
           </span>
           <span className="offres">
             &nbsp;
-            <CountUp end={time} duration={1} /> s
+            <CountUp end={time} decimals={2} duration={1} /> s
           </span>
         </div>
       </div>

@@ -7,15 +7,15 @@ import './TwoLabels.css'
 import CountUp from 'react-countup'
 
 function TwoLabels() {
-  const [first, setFirst] = useState('')
-  const [empty, setEmpty] = useState('')
-  const [second, setSecond] = useState('')
-  const [diameter, setDiameter] = useState('')
+  const [first, setFirst] = useState("")
+  const [empty, setEmpty] = useState("")
+  const [second, setSecond] = useState("")
+  const [diameter, setDiameter] = useState("")
 
-  const [resultA, setResultA] = useState('')
-  const [resultB, setResultB] = useState('')
-  const [distance, setDistance] = useState('')
-  const [time, setTime] = useState('')
+  const [resultA, setResultA] = useState("")
+  const [resultB, setResultB] = useState("")
+  const [distance, setDistance] = useState(Number)
+  const [time, setTime] = useState(Number)
 
   useEffect(() => {
     const _first = +first
@@ -24,6 +24,14 @@ function TwoLabels() {
     const _diameter = +diameter
 
     if (_first !== 0 && _empty !== 0 && _second !== 0 && _diameter !== 0) {
+
+      if(_first + _second < 520){
+        setResultA(0);
+        setResultB(0);
+        toast.info('L1 + L2 < 520', { position: toast.POSITION.TOP_CENTER })
+
+      }
+
       let x1 = 100 - _second - _empty / 2
       let offset = 0
       if (x1 < 0) {
@@ -101,12 +109,10 @@ function TwoLabels() {
       setDistance(l3)
 
       let T = (_diameter * 3.1416) / 88.2
-      console.log(T)
-
-      setTime(Number.parseFloat(T).toFixed(2))
+      setTime(T)
     }
   }, [first, second, diameter, empty])
-
+  
   return (
     <div className="calcS">
       <form action="submit" className="forma">
@@ -190,8 +196,8 @@ function TwoLabels() {
           <span className="offsetres">Разстояние между етикетите</span>
           <span className="offres">
             {' '}
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <CountUp end={distance} duration={0.8} /> cm
+            &nbsp;&nbsp;&nbsp;
+            <CountUp end={distance} decimals={2} duration={0.8} /> cm
           </span>
         </div>
         <div className="offset">
@@ -201,7 +207,8 @@ function TwoLabels() {
           <span className="offres">
             {' '}
             &nbsp;&nbsp;
-            <CountUp end={time} duration={0.8} /> s
+            <CountUp end={time} decimals={2} duration={0.8} /> s
+
           </span>
         </div>
       </div>

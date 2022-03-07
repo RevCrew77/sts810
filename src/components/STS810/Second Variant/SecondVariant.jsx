@@ -23,7 +23,6 @@ function SecondVariant() {
       if (_first + _second + _empty >= 67) {
         setResultA(64 - (_second + _empty / 2))
         setResultB(_second + _empty / 2)
-        toast.info('Машината трябва да стартира с по-дългия етикет', { position: toast.POSITION.TOP_CENTER })
       } else if (61 < _first + _second + _empty < 67) {
         setResultA(_empty / 2)
         setResultB(_second + _empty / 2)
@@ -61,7 +60,9 @@ function SecondVariant() {
             <div className="labelInpt">
               <label htmlFor="l1">Дължина преден етикет</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
-              
+              <Alert severity="info" className="alrt">
+                25 {'<'} L0 {'<'} 210мм
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
@@ -70,6 +71,9 @@ function SecondVariant() {
             <div className="labelInpt">
               <label htmlFor="l0">Процеп между етикетите</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
+              <Alert severity="info" className="alrt">
+                2.5 {'<'} L0 {'<'} 60мм
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>
@@ -78,6 +82,9 @@ function SecondVariant() {
             <div className="labelInpt">
               <label htmlFor="l2">Дължина заден етикет</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
+              <Alert severity="info" className="alrt">
+                25 {'<'} L2 {'<'} 210мм
+              </Alert>
             </div>
             <span className="mm">mm</span>
           </div>

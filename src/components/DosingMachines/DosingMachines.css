@@ -1,0 +1,42 @@
+.dosing {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.sts809 {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  background-color: #fafafa;
+  height: 535px;
+  width: 410px;
+  margin: 15px 0px 0px 0px;
+  padding: 20px 20px 0px 20px;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.25s ease 0s;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.linkTo {
+  text-decoration: none;
+}
+
+.sts809:hover{
+  background-color: #ececec;
+
+}
+
+.imgWraper img {
+  margin-top: 30px;
+  background: 50% 50%;
+  height: 366px;
+  width: 366px;
+  position: absolute;
+  display: block;
+  transform: matrix(0, 911466, 0, 0, 0.911466, 0, 0);
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2px solid grey;
+}
