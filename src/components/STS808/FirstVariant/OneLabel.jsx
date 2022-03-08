@@ -4,6 +4,9 @@ import CountUp from 'react-countup'
 import onelabel from '../../../pictures/sts808-1label.png'
 import './OneLabel.css'
 import { toast } from 'react-toastify'
+import { useTranslation } from 'react-i18next'
+import { Trans } from 'react-i18next'
+import {TranslateContextComponent} from '../../TranslateContextComponent';
 
 function OneLabel() {
   const [empty, setEmpty] = useState("")
@@ -56,20 +59,23 @@ function OneLabel() {
     }
   }, [first, diameter, empty])
 
+  const { t } = useTranslation();
+
+
   return (
     <div className="calcS">
       <form action="submit" className="forma">
         <img src={onelabel} alt="label" className="imageLabel" />
         <div className="divDescr">
-          <span className="descr">Лента с етикети</span>
-          <span className="descr1">Етикет</span>
-          <span className="descr2">Съд</span>
+          <span className="descr">{t('ЛентаСЕтикети')}</span>
+          <span className="descr1">{t('Етикет')}</span>
+          <span className="descr2">{t('Съд')}</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
             <span className="label">L0 = </span>
             <div className="labelInpt">
-              <label htmlFor="l0">Процеп между етикетите</label>
+              <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input
                 name="l0"
                 min={2}
@@ -88,7 +94,7 @@ function OneLabel() {
           <div className="labelcalc">
             <span className="label">L =&nbsp;&nbsp;</span>
             <div className="labelInpt">
-              <label htmlFor="L">Дължина на етикетите</label>
+              <label htmlFor="L">{t('Дължина')}</label>
               <input name="L" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
               <Alert severity="info" className="alrt">
                 20 {'<'} L {'<'} 600
@@ -99,7 +105,7 @@ function OneLabel() {
           <div className="labelcalc">
             <span className="label">D =&nbsp;&nbsp;</span>
             <div className="labelInpt">
-              <label htmlFor="D">Диаметър на съда</label>
+              <label htmlFor="D">{t('ДиаметърСъд')}</label>
               <input
                 name="D"
                 className="a"
@@ -117,14 +123,14 @@ function OneLabel() {
       </form>
       <div className="result">
         <div className="offset">
-          <span className="offsetres">Офсет стоп</span>
+          <span className="offsetres">{t('ОфсетСтоп')}</span>
           <span className="offres">
             <CountUp end={resultA} duration={1} /> mm
           </span>
         </div>
         <div className="offset">
           <span className="offsetres">
-            Време движение <br /> (Препоръчително)
+          <Trans components={{br: <br />}}>{t('Време')}</Trans>
           </span>
           <span className="offres">
             &nbsp;

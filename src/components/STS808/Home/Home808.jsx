@@ -2,19 +2,24 @@ import React from 'react'
 import sts808 from '../../../pictures/labeling-machine-STS808.png'
 import './Home808.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Trans } from 'react-i18next'
+import {TranslateContextComponent} from '../../TranslateContextComponent';
 
 function Home808() {
+  const { t } = useTranslation();
+
   return (
     <div className="wrapper">
       <img src={sts808} alt="machine" />
-      <p className="paragraph">Изчисляване параметрите за етикираща машина STS 810</p>
+      <p className="paragraph">{t('calc808')}</p>
 
       <section className="buttons">
         <Link to="/labeling-machines/STS808/1-label" className="label1">
-          1 етикет
+          {t('label1')}
         </Link>
         <Link to="/labeling-machines/STS808/2-labels" className="label2">
-          2 етикета
+          {t('label2')}
         </Link>
       </section>
     </div>

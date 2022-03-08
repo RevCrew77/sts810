@@ -5,6 +5,10 @@ import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts808-2labels.png'
 import './TwoLabels.css'
 import CountUp from 'react-countup'
+import { useTranslation } from 'react-i18next'
+import { Trans } from 'react-i18next'
+import {TranslateContextComponent} from '../../TranslateContextComponent';
+
 
 function TwoLabels() {
   const [first, setFirst] = useState("")
@@ -111,16 +115,19 @@ function TwoLabels() {
       let T = (_diameter * 3.1416) / 88.2
       setTime(T)
     }
-  }, [first, second, diameter, empty])
+  }, [first, second, diameter, empty])  
+  
+  const { t } = useTranslation();
+
   
   return (
     <div className="calcS">
       <form action="submit" className="forma">
         <img src={twolabel} alt="label" className="imageLabelCS" />
         <div className="divDescr">
-          <span className="descrB">Лента с етикети</span>
-          <span className="descr1B">Етикет преден</span>
-          <span className="descr2B">Етикет заден</span>
+          <span className="descrB">{t('ЛентаСЕтикети')}</span>
+          <span className="descr1B">{t('ЕтикетПреден')}</span>
+          <span className="descr2B">{t('ЗаденЕтикет')}</span>
           <span className="descr3B">Съд</span>
         </div>
         <div className="labelcontainer">
