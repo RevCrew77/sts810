@@ -11,12 +11,14 @@ export function useTranslateUpdate() {
   return useContext(TranslateUpdateContext)
 }
 
+
 export function TranslateProvider({ children }) {
   const [english, setEngilsh] = useState(true)
 
   function toggleTranslate() {
     setEngilsh((prevEnglish) => !prevEnglish)
   }
+  
 
   return (
     <TranslateContext.Provider value={english}>

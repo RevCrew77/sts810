@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import onelabel from '../../../pictures/sts810-1label.png'
 import './FirstVariant.css'
 import CountUp from 'react-countup'
+import { useTranslation } from 'react-i18next'
 
 function FirstVariant() {
   const [first, setFirst] = useState('')
@@ -58,19 +59,21 @@ function FirstVariant() {
     }
   }, [first, empty])
 
+  const {t} = useTranslation();
+
   return (
     <div className="calc">
       <form action="submit" className="forma">
         <img src={onelabel} alt="label" className="imageLabelA" />
         <div className="divDescr">
-          <span className="descrA">Лента с етикети</span>
-          <span className="descr1A">Етикет преден</span>
+          <span className="descrA">{t('ЛентаСЕтикети')}</span>
+          <span className="descr1A">{t('ЕтикетПреден')}</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
             <span className="label">L0 =</span>
             <div className="labelInpt">
-              <label htmlFor="l0">Процеп между етикетите</label>
+              <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
               <Alert severity="info" className="alrt">
                 2.5 {'<'} L0 {'<'} 60mm
@@ -81,7 +84,7 @@ function FirstVariant() {
           <div className="labelcalc">
             <span className="label">L =&nbsp;&nbsp;</span>
             <div className="labelInpt">
-              <label htmlFor="l">Дължина на етикетите</label>
+              <label htmlFor="l">{t('Дължина')}</label>
               <input name="l" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
               <Alert severity="info" className="alrt">
                 25 {'<'} L {'<'} 120mm
@@ -93,7 +96,7 @@ function FirstVariant() {
       </form>
       <div className="result">
         <div className="offset">
-          <span className="offsetres">Офсет стоп </span>
+          <span className="offsetres">{t('ОфсетСтоп')}</span>
           <span className="offres">
             <CountUp end={resultA} duration={1} /> mm
           </span>

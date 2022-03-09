@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts810-2labels.png'
 import './SecondVariant.css'
 import CountUp from 'react-countup'
+import { useTranslation } from 'react-i18next'
 
 function SecondVariant() {
   const [first, setFirst] = useState('')
@@ -45,20 +46,22 @@ function SecondVariant() {
     }
   }, [first, second, empty])
 
+  const { t } = useTranslation()
+
   return (
     <div className="calc">
       <form action="submit" className="forma">
         <img src={twolabel} alt="label" className="imageLabelC" />
         <div className="divDescr">
-          <span className="descrBB">Лента с етикети</span>
-          <span className="descr1BB">Етикет преден</span>
-          <span className="descr2BB">Етикет заден</span>
+          <span className="descrBB">{t('ЛентаСЕтикети')}</span>
+          <span className="descr1BB">{t('ЕтикетПреден')}</span>
+          <span className="descr2BB">{t('ЗаденЕтикет')}</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
             <span className="label">L1 =</span>
             <div className="labelInpt">
-              <label htmlFor="l1">Дължина преден етикет</label>
+              <label htmlFor="l1">{t('ДължинаПреденЕтикет')}</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
               <Alert severity="info" className="alrt">
                 25 {'<'} L0 {'<'} 210мм
@@ -69,7 +72,7 @@ function SecondVariant() {
           <div className="labelcalc">
             <span className="label">L0 =</span>
             <div className="labelInpt">
-              <label htmlFor="l0">Процеп между етикетите</label>
+              <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
               <Alert severity="info" className="alrt">
                 2.5 {'<'} L0 {'<'} 60мм
@@ -80,7 +83,7 @@ function SecondVariant() {
           <div className="labelcalc">
             <span className="label">L2 =</span>
             <div className="labelInpt">
-              <label htmlFor="l2">Дължина заден етикет</label>
+              <label htmlFor="l2">{t('ДължинаЗаденЕтикет')}</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
               <Alert severity="info" className="alrt">
                 25 {'<'} L2 {'<'} 210мм
@@ -92,14 +95,14 @@ function SecondVariant() {
       </form>
       <div className="result">
         <div className="offset">
-          <span className="offsetres">Офсет стоп 1</span>
+          <span className="offsetres">{t('ОфсетСтоп1')}</span>
           <span className="offres">
             <CountUp end={resultA} duration={1} />
             mm
           </span>
         </div>
         <div className="offset">
-          <span className="offsetres">Офсет стоп 2</span>
+          <span className="offsetres">{t('ОфсетСтопБ')}</span>
           <span className="offres">
             {' '}
             <CountUp end={resultB} duration={0.8} /> mm

@@ -1,13 +1,12 @@
 import { Alert } from '@mui/material'
 import React, { useState, useEffect } from 'react'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts808-2labels.png'
 import './TwoLabels.css'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
-import {TranslateContextComponent} from '../../TranslateContextComponent';
 
 
 function TwoLabels() {
@@ -32,7 +31,7 @@ function TwoLabels() {
       if(_first + _second < 520){
         setResultA(0);
         setResultB(0);
-        toast.info('L1 + L2 < 520', { position: toast.POSITION.TOP_CENTER })
+        // toast.info('L1 + L2 < 520', { position: toast.POSITION.TOP_CENTER })
 
       }
 
@@ -128,13 +127,13 @@ function TwoLabels() {
           <span className="descrB">{t('ЛентаСЕтикети')}</span>
           <span className="descr1B">{t('ЕтикетПреден')}</span>
           <span className="descr2B">{t('ЗаденЕтикет')}</span>
-          <span className="descr3B">Съд</span>
+          <span className="descr3B">{t('Съд')}</span>
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
             <span className="label">L1 =</span>
             <div className="labelInpt">
-              <label htmlFor="l1">Дължина преден етикет</label>
+              <label htmlFor="l1">{t('ДължинаПреденЕтикет')}</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
               <Alert severity="info" className="alrt">
                 25 {'<'} L1 {'<'} 520
@@ -145,7 +144,7 @@ function TwoLabels() {
           <div className="labelcalc">
             <span className="label">L0 =</span>
             <div className="labelInpt">
-              <label htmlFor="l0">Процеп между етикетите</label>
+              <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
               <Alert severity="info" className="alrt">
                 2,5 {'<'} L0 {'<'} 60
@@ -156,7 +155,7 @@ function TwoLabels() {
           <div className="labelcalc">
             <span className="label">L2 =</span>
             <div className="labelInpt">
-              <label htmlFor="l2">Дължина заден етикет</label>
+              <label htmlFor="l2">{t('ДължинаЗаденЕтикет')}</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
               <Alert severity="info" className="alrt">
                 25 {'<'} L2 {'<'} 520
@@ -167,7 +166,7 @@ function TwoLabels() {
           <div className="labelcalc">
             <span className="label">D =&nbsp;&nbsp;</span>
             <div className="labelInpt">
-              <label htmlFor="D">Диаметър на съда</label>
+              <label htmlFor="D">{t('ДиаметърСъд')}</label>
               <input
                 name="D"
                 className="a"
@@ -185,14 +184,14 @@ function TwoLabels() {
       </form>
       <div className="result">
         <div className="offset">
-          <span className="offsetres">Офсет стоп 1</span>
+          <span className="offsetres">{t('ОфсетСтоп')}</span>
           <span className="offres">
             <CountUp end={resultA} duration={1} />
             mm
           </span>
         </div>
         <div className="offset">
-          <span className="offsetres">Офсет стоп 2</span>
+          <span className="offsetres">{t('ОфсетСтопБ')}</span>
           <span className="offres">
             {' '}
             &nbsp;
@@ -200,7 +199,7 @@ function TwoLabels() {
           </span>
         </div>
         <div className="offset">
-          <span className="offsetres">Разстояние между етикетите</span>
+          <span className="offsetres">{t('РазстояниеМуЕтикети')}</span>
           <span className="offres">
             {' '}
             &nbsp;&nbsp;&nbsp;
@@ -209,7 +208,8 @@ function TwoLabels() {
         </div>
         <div className="offset">
           <span className="offsetres">
-            Време движение <br /> (Препоръчително)
+          <Trans components={{br: <br />}}>{t('Време')}</Trans>
+
           </span>
           <span className="offres">
             {' '}
