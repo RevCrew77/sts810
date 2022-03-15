@@ -16,10 +16,22 @@ function OneLabel() {
   const [resultA, setResultA] = useState("")
   const [time, setTime] = useState("")
 
+  const [open, setOpen] = useState({ empty: false, first: false, diameter: false })
+
+
   useEffect(() => {
     const _empty = +empty
     const _first = +first
     const _diameter = +diameter
+
+    if (_empty && !(_empty > 2.5 && _empty < 60)) setOpen((open) => ({ ...open, empty: true }))
+    else setOpen((open) => ({ ...open, empty: false }))
+
+    if (_first && !(_first > 25 && _first < 520))  setOpen((open) => ({ ...open, first: true }))
+    else setOpen((open) => ({ ...open, first: false }))
+
+    if (_diameter && !(_diameter > 25 && _diameter < 160))  setOpen((open) => ({ ...open, diameter: true }))
+    else setOpen((open) => ({ ...open, diameter: false }))
 
     if (_empty !== 0 && _first !== 0 && _diameter !== 0) {
       let x1 = 100 - _first - _empty / 2
@@ -51,6 +63,9 @@ function OneLabel() {
             }
           }
         }
+      }
+      if(_first === 100){
+        offset = 97;
       }
       setResultA(offset)
       let T = (_diameter * 3.1416) / 88.2
@@ -85,9 +100,11 @@ function OneLabel() {
                 value={empty}
                 type="number"
               />
-              <Alert severity="info" className="alrt">
-                2 {'<'} L0 {'<'} 60мм
-              </Alert>
+              {open.empty && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  2.5 {'<'} L0 {'<'} 60mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -96,9 +113,11 @@ function OneLabel() {
             <div className="labelInpt">
               <label htmlFor="L">{t('Дължина')}</label>
               <input name="L" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
-              <Alert severity="info" className="alrt">
-                20 {'<'} L {'<'} 600
-              </Alert>
+              {open.first && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  25 {'<'} L {'<'} 520mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -113,9 +132,11 @@ function OneLabel() {
                 value={diameter}
                 type="number"
               />
-              <Alert severity="info" className="alrt">
-                25 {'<'} D {'<'} 160мм
-              </Alert>
+              {open.diameter && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  25 {'<'} D {'<'} 160mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>

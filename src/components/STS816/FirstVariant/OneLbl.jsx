@@ -1,16 +1,17 @@
 import { Alert, Snackbar } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import onelabel from '../../../pictures/sts810-1label.png'
-import './FirstVariant.css'
+import './OneLbl.css'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
-function FirstVariant() {
+function OneLbl() {
   const [first, setFirst] = useState('')
   const [empty, setEmpty] = useState('')
 
   const [resultA, setResultA] = useState('')
   const [open, setOpen] = useState({ empty: false, first: false })
+
 
   useEffect(() => {
     const _first = +first
@@ -21,10 +22,9 @@ function FirstVariant() {
 
     if (_first && !(_first > 25 && _first < 120))  setOpen((open) => ({ ...open, first: true }))
     else setOpen((open) => ({ ...open, first: false }))
-    
 
     if (_empty !== 0 && _first !== 0) {
-      let x1 = 64 - _first - _empty / 2
+      let x1 = 100 - _first - _empty / 2
       let offset = 0
 
       if (x1 < 0) {
@@ -62,9 +62,8 @@ function FirstVariant() {
         offset = 1
       }
 
-      if (_first === 64) {
-        offset = 62
-        console.log(offset);
+      if (_first === 100) {
+        offset = 97
       }
 
       setResultA(offset)
@@ -122,4 +121,4 @@ function FirstVariant() {
   )
 }
 
-export default FirstVariant
+export default OneLbl

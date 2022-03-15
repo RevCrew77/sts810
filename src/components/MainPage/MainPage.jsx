@@ -36,7 +36,7 @@ function MainPage() {
       </div>
 
       <div className="sts816">
-        <Link to={'/STS816'} className="link">
+        <Link to={'/labeling-machines/STS816'} className="link">
           <h3>
             <Trans components={{ br: <br />, strong: <strong /> }}>{t('sts816')}</Trans>
           </h3>

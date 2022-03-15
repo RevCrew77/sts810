@@ -8,12 +8,14 @@
 
 .logo {
   height: 171px;
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
+  
 }
 
 .lang {
   margin-top: 87px;
   margin-right: 20px;
+  display: block;
 }
 
 .bg {

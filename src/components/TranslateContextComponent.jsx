@@ -2,12 +2,12 @@ import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
 const translatioinsBg = {
-  "етикиращиМашини": 'Етикиращи машни',
+  "етикиращиМашини": 'Етикетиращи машни',
   "дозиращиМашини": 'Дозиращи машни',
-  "sts808": 'Етикираща машина <br/><strong>STS808</strong>',
-  "sts810": 'Етикираща машина <br/><strong>STS810</strong>',
-  "sts816": 'Етикираща машина <br/><strong>STS816</strong>',
-  "calc808": 'Изчисляване параметрите за етикираща "машина" STS 808',
+  "sts808": 'Етикетираща машина <br/><strong>STS808</strong>',
+  "sts810": 'Етикетираща машина <br/><strong>STS810</strong>',
+  "sts816": 'Етикетираща машина <br/><strong>STS816</strong>',
+  "calc808": 'Изчисляване параметрите за етикетираща машина STS 808',
   "label1": '1 етикет', 
   "label2": '2 етикета',
   "ЛентаСЕтикети": 'Лента с етикети',
@@ -25,11 +25,13 @@ const translatioinsBg = {
   "ДължинаЗаденЕтикет": 'Дължина заден етикет',
   "РазстояниеМуЕтикети": 'Разстояние между етикетите',
   "ОфсетСтопБ": 'Офсет стоп 2',
-  "calc810a": 'Изчисляване на параметрите за етикираща машина STS 810',
+  "calc810a": 'Изчисляване на параметрите за етикетираща машина STS 810',
   "sts809": 'Дозираща машина <br/> <strong>STS809</strong>',
   "sts812": 'Дозираща машина <br/> <strong>STS809</strong>',
   "sts811G": 'Дозираща машина <br/> <strong>STS809</strong>',
-  "sts813G": 'Дозираща машина <br/> <strong>STS809</strong>'
+  "sts813G": 'Дозираща машина <br/> <strong>STS809</strong>',
+  "calc816a": 'Изчисляване на параметрите за етикетираща машина STS 816'
+
 
 }
 const translationsEn = {
@@ -60,8 +62,8 @@ const translationsEn = {
   "sts809": 'Dosing machine <br/> <strong>STS809</strong>',
   "sts812": 'Dosing machine <br/> <strong>STS809</strong>',
   "sts811G": 'Dosing machine <br/> <strong>STS809</strong>',
-  "sts813G": 'Dosing machine <br/> <strong>STS809</strong>'
-
+  "sts813G": 'Dosing machine <br/> <strong>STS809</strong>',
+  "calc816a": 'Parameters calculation for labeling machine STS 816'
 } 
 
 i18n.use(initReactI18next).init({

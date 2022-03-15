@@ -1,6 +1,6 @@
 import { Alert } from '@mui/material'
 import React, { useState, useEffect } from 'react'
-import { ToastContainer} from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts808-2labels.png'
 import './TwoLabels.css'
@@ -8,17 +8,18 @@ import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
 
-
 function TwoLabels() {
-  const [first, setFirst] = useState("")
-  const [empty, setEmpty] = useState("")
-  const [second, setSecond] = useState("")
-  const [diameter, setDiameter] = useState("")
+  const [first, setFirst] = useState('')
+  const [empty, setEmpty] = useState('')
+  const [second, setSecond] = useState('')
+  const [diameter, setDiameter] = useState('')
 
-  const [resultA, setResultA] = useState("")
-  const [resultB, setResultB] = useState("")
+  const [resultA, setResultA] = useState('')
+  const [resultB, setResultB] = useState('')
   const [distance, setDistance] = useState(Number)
   const [time, setTime] = useState(Number)
+
+  const [open, setOpen] = useState({ empty: false, first: false, second: false, diameter: false })
 
   useEffect(() => {
     const _first = +first
@@ -26,15 +27,22 @@ function TwoLabels() {
     const _second = +second
     const _diameter = +diameter
 
+    if (_empty && !(_empty > 2.5 && _empty < 60)) setOpen((open) => ({ ...open, empty: true }))
+    else setOpen((open) => ({ ...open, empty: false }))
+
+    if (_first && !(_first > 25 && _first < 520)) setOpen((open) => ({ ...open, first: true }))
+    else setOpen((open) => ({ ...open, first: false }))
+
+    if (_second && !(_second > 25 && _second < 520)) setOpen((open) => ({ ...open, second: true }))
+    else setOpen((open) => ({ ...open, second: false }))
+
+    if (_diameter && !(_diameter > 25 && _diameter < 160)) setOpen((open) => ({ ...open, diameter: true }))
+    else setOpen((open) => ({ ...open, diameter: false }))
+
+    // if ((_first + _second) < 520) setOpen((open) => ({ ...open, first: true, second: true }))
+    // else setOpen((open) => ({ ...open, first: false, second: false }))
+
     if (_first !== 0 && _empty !== 0 && _second !== 0 && _diameter !== 0) {
-
-      if(_first + _second < 520){
-        setResultA(0);
-        setResultB(0);
-        // toast.info('L1 + L2 < 520', { position: toast.POSITION.TOP_CENTER })
-
-      }
-
       let x1 = 100 - _second - _empty / 2
       let offset = 0
       if (x1 < 0) {
@@ -65,7 +73,10 @@ function TwoLabels() {
           }
         }
       }
-      
+      if (_first === 100) {
+        offset = 97
+      }
+
       setResultA(offset)
 
       let y1 = 100 - _first - _empty / 2
@@ -103,7 +114,6 @@ function TwoLabels() {
       if (offset2 === 0) {
         offset2 = 1
       }
-      
 
       setResultB(offset2)
 
@@ -114,11 +124,10 @@ function TwoLabels() {
       let T = (_diameter * 3.1416) / 88.2
       setTime(T)
     }
-  }, [first, second, diameter, empty])  
-  
-  const { t } = useTranslation();
+  }, [first, second, diameter, empty])
 
-  
+  const { t } = useTranslation()
+
   return (
     <div className="calcS">
       <form action="submit" className="forma">
@@ -135,9 +144,15 @@ function TwoLabels() {
             <div className="labelInpt">
               <label htmlFor="l1">{t('ДължинаПреденЕтикет')}</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
-              <Alert severity="info" className="alrt">
-                25 {'<'} L1 {'<'} 520
-              </Alert>
+              {(open.first && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  25 {'<'} L2 {'<'} 520mm
+                </Alert>
+              )) || open.first && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  L1 + L2 {'<'} 520mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -146,9 +161,11 @@ function TwoLabels() {
             <div className="labelInpt">
               <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
-              <Alert severity="info" className="alrt">
-                2,5 {'<'} L0 {'<'} 60
-              </Alert>
+              {open.empty && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  2.5 {'<'} L0 {'<'} 60mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -157,9 +174,15 @@ function TwoLabels() {
             <div className="labelInpt">
               <label htmlFor="l2">{t('ДължинаЗаденЕтикет')}</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
-              <Alert severity="info" className="alrt">
-                25 {'<'} L2 {'<'} 520
-              </Alert>
+              {(open.second && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  25 {'<'} L2 {'<'} 520mm
+                </Alert>
+              )) || open.second && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  L1 + L2 {'<'} 520mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -174,9 +197,11 @@ function TwoLabels() {
                 value={diameter}
                 type="number"
               />
-              <Alert severity="info" className="alrt">
-                20 {'<'} D {'<'} 180
-              </Alert>
+              {open.diameter && (
+                <Alert severity="error" variant="filled" className="alrt">
+                  25 {'<'} D {'<'} 160mm
+                </Alert>
+              )}
             </div>
             <span className="mm">mm</span>
           </div>
@@ -186,8 +211,7 @@ function TwoLabels() {
         <div className="offset">
           <span className="offsetres">{t('ОфсетСтоп')}</span>
           <span className="offres">
-            <CountUp end={resultA} duration={1} />
-            mm
+            <CountUp end={resultA} duration={1} /> mm
           </span>
         </div>
         <div className="offset">
@@ -208,14 +232,12 @@ function TwoLabels() {
         </div>
         <div className="offset">
           <span className="offsetres">
-          <Trans components={{br: <br />}}>{t('Време')}</Trans>
-
+            <Trans components={{ br: <br /> }}>{t('Време')}</Trans>
           </span>
           <span className="offres">
             {' '}
             &nbsp;&nbsp;
             <CountUp end={time} decimals={2} duration={0.8} /> s
-
           </span>
         </div>
       </div>

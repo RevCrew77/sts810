@@ -13,6 +13,9 @@ import TwoLabels from './components/STS808/SecondVariant/TwoLabels'
 import DosingMachines from './components/DosingMachines/DosingMachines'
 // import BreadCrumbs from './components/BreadCrumbs'
 import { TranslateProvider } from './components/TranslateContext'
+import Home816 from './components/STS816/Home/Home816'
+import OneLbl from './components/STS816/FirstVariant/OneLbl'
+import TwoLbls from './components/STS816/SecondVariant/TwoLbls'
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
               <Route exact path="/labeling-machines/STS810" element={<Home />} />
               <Route exact path="/labeling-machines/STS810/1-label" element={<FirstVariant />} />
               <Route exact path="/labeling-machines/STS810/2-labels" element={<SecondVariant />} />
+              <Route exact path="/labeling-machines/STS816" element={<Home816 />} />
+              <Route exact path="/labeling-machines/STS816/1-label" element={<OneLbl />} />
+              <Route exact path="/labeling-machines/STS816/2-labels" element={<TwoLbls />} />
               <Route exact path="/dosing-machines" element={<DosingMachines />} />
             </Routes>
           </div>
