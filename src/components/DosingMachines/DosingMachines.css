@@ -47,4 +47,16 @@
     flex-direction: column;
     margin-left: 15px;
   }
+
+  .sts809{
+    padding: 0px;
+    width: 355px;
+    height: 450px;
+  }
+
+  .imgWraper img{
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+  }
 }
