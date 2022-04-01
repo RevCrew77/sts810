@@ -40,3 +40,11 @@
   border-radius: 50%;
   border: 2px solid grey;
 }
+
+@media screen and (max-device-width: 480px) {
+  .dosing{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+}

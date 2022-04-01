@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts810-2labels.png'
-// import './TwoLbls.css'   
+// import './TwoLbls.css'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
@@ -25,10 +25,10 @@ function TwoLbls() {
     if (_empty && !(_empty > 2.5 && _empty < 60)) setOpen((open) => ({ ...open, empty: true }))
     else setOpen((open) => ({ ...open, empty: false }))
 
-    if (_first && !(_first > 25 && _first < 210))  setOpen((open) => ({ ...open, first: true }))
+    if (_first && !(_first > 25 && _first < 210)) setOpen((open) => ({ ...open, first: true }))
     else setOpen((open) => ({ ...open, first: false }))
 
-    if (_second && !(_second > 25 && _second < 210))  setOpen((open) => ({ ...open, second: true }))
+    if (_second && !(_second > 25 && _second < 210)) setOpen((open) => ({ ...open, second: true }))
     else setOpen((open) => ({ ...open, second: false }))
 
     if (_first < 64 && _second < 64) {

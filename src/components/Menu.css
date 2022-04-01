@@ -42,7 +42,7 @@
 }
 
 @media screen and (max-device-width: 480px) {
-  .menu{
+  .menu {
     display: flex;
     flex-direction: column;
     align-content: stretch;
@@ -51,21 +51,20 @@
     justify-content: center;
   }
 
-  .labelMach{
+  .labelMach {
     margin: 5px 0px 0px 0px;
     padding: 0px;
     width: 320px;
     height: 265px;
-    
   }
 
-  h3{
+  h3 {
     font-size: 25px;
   }
 
-  .imgWrap img{
+  .imgWrap img {
     height: 200px;
     width: 200px;
-    margin: 0px 0px 20px 65px
-  }  
+    margin: 0px 0px 20px 65px;
+  }
 }
