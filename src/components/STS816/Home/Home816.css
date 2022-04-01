@@ -1,3 +1,9 @@
 .sts816img{
     width: 30%;
 }
+
+@media screen and (max-device-width: 480px) {
+    .sts816img{
+        width: auto;
+    }
+}
