@@ -83,7 +83,7 @@ function FirstVariant() {
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
-            <span className="label">L0 =</span>
+            <span className="label">L0&nbsp;=</span>
             <div className="labelInpt">
               <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
@@ -96,7 +96,7 @@ function FirstVariant() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L =&nbsp;&nbsp;</span>
+            <span className="label">L&nbsp;=&nbsp;&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="l">{t('Дължина')}</label>
               <input name="l" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />

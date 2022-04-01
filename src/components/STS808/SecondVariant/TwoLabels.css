@@ -136,3 +136,31 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+@media screen and (max-device-width: 480px) {
+  .forma {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calcS {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .result {
+    margin: 0px;
+  }
+  .imageLabelCS {
+    margin: 0px;
+  }
+
+  .label{
+    padding: 20px 0px 0px 0px;
+  }
+
+  .labelcalc {
+    margin: 0px;
+  }
+
+}

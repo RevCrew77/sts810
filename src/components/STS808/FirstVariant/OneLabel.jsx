@@ -6,18 +6,17 @@ import './OneLabel.css'
 import { toast } from 'react-toastify'
 import { useTranslation } from 'react-i18next'
 import { Trans } from 'react-i18next'
-import {TranslateContextComponent} from '../../TranslateContextComponent';
+import { TranslateContextComponent } from '../../TranslateContextComponent'
 
 function OneLabel() {
-  const [empty, setEmpty] = useState("")
-  const [first, setFirst] = useState("")
-  const [diameter, setDiameter] = useState("")
+  const [empty, setEmpty] = useState('')
+  const [first, setFirst] = useState('')
+  const [diameter, setDiameter] = useState('')
 
-  const [resultA, setResultA] = useState("")
-  const [time, setTime] = useState("")
+  const [resultA, setResultA] = useState('')
+  const [time, setTime] = useState('')
 
   const [open, setOpen] = useState({ empty: false, first: false, diameter: false })
-
 
   useEffect(() => {
     const _empty = +empty
@@ -27,10 +26,10 @@ function OneLabel() {
     if (_empty && !(_empty > 2.5 && _empty < 60)) setOpen((open) => ({ ...open, empty: true }))
     else setOpen((open) => ({ ...open, empty: false }))
 
-    if (_first && !(_first > 25 && _first < 520))  setOpen((open) => ({ ...open, first: true }))
+    if (_first && !(_first > 25 && _first < 520)) setOpen((open) => ({ ...open, first: true }))
     else setOpen((open) => ({ ...open, first: false }))
 
-    if (_diameter && !(_diameter > 25 && _diameter < 160))  setOpen((open) => ({ ...open, diameter: true }))
+    if (_diameter && !(_diameter > 25 && _diameter < 160)) setOpen((open) => ({ ...open, diameter: true }))
     else setOpen((open) => ({ ...open, diameter: false }))
 
     if (_empty !== 0 && _first !== 0 && _diameter !== 0) {
@@ -64,8 +63,8 @@ function OneLabel() {
           }
         }
       }
-      if(_first === 100){
-        offset = 97;
+      if (_first === 100) {
+        offset = 97
       }
       setResultA(offset)
       let T = (_diameter * 3.1416) / 88.2
@@ -74,8 +73,7 @@ function OneLabel() {
     }
   }, [first, diameter, empty])
 
-  const { t } = useTranslation();
-
+  const { t } = useTranslation()
 
   return (
     <div className="calcS">
@@ -88,7 +86,7 @@ function OneLabel() {
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
-            <span className="label">L0 = </span>
+            <span className="label">L0&nbsp;=</span>
             <div className="labelInpt">
               <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input
@@ -109,7 +107,7 @@ function OneLabel() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L =&nbsp;&nbsp;</span>
+            <span className="label">L&nbsp;=&nbsp;&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="L">{t('Дължина')}</label>
               <input name="L" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
@@ -122,7 +120,7 @@ function OneLabel() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">D =&nbsp;&nbsp;</span>
+            <span className="label">D&nbsp;=&nbsp;&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="D">{t('ДиаметърСъд')}</label>
               <input
@@ -141,24 +139,24 @@ function OneLabel() {
             <span className="mm">mm</span>
           </div>
         </div>
+        <div className="resultS ">
+          <div className="offset">
+            <span className="offsetres">{t('ОфсетСтоп')}</span>
+            <span className="offres">
+              <CountUp end={resultA} duration={1} /> mm
+            </span>
+          </div>
+          <div className="offset">
+            <span className="offsetres">
+              <Trans components={{ br: <br /> }}>{t('Време')}</Trans>
+            </span>
+            <span className="offres">
+              &nbsp;
+              <CountUp end={time} decimals={2} duration={1} /> s
+            </span>
+          </div>
+        </div>
       </form>
-      <div className="result">
-        <div className="offset">
-          <span className="offsetres">{t('ОфсетСтоп')}</span>
-          <span className="offres">
-            <CountUp end={resultA} duration={1} /> mm
-          </span>
-        </div>
-        <div className="offset">
-          <span className="offsetres">
-          <Trans components={{br: <br />}}>{t('Време')}</Trans>
-          </span>
-          <span className="offres">
-            &nbsp;
-            <CountUp end={time} decimals={2} duration={1} /> s
-          </span>
-        </div>
-      </div>
     </div>
   )
 }

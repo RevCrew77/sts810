@@ -25,31 +25,31 @@ function Navbar() {
 
   const navigate = useNavigate()
 
-  function handleClick(event) {
-    event.preventDefault()
-    console.info('You clicked a breadcrumb.')
-  }
-  const breadcrumbs = [
-    <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
-      MUI
-    </Link>,
-    <Link underline="hover" key="2" color="inherit" href="/getting-started/installation/" onClick={handleClick}>
-      Core
-    </Link>,
-    <Typography key="3" color="text.primary">
-      Breadcrumb
-    </Typography>
-  ]
+  // function handleClick(event) {
+  //   event.preventDefault()
+  //   console.info('You clicked a breadcrumb.')
+  // }
+  // const breadcrumbs = [
+  //   <Link underline="hover" key="1" color="inherit" href="/" onClick={handleClick}>
+  //     MUI
+  //   </Link>,
+  //   <Link underline="hover" key="2" color="inherit" href="/getting-started/installation/" onClick={handleClick}>
+  //     Core
+  //   </Link>,
+  //   <Typography key="3" color="text.primary">
+  //     Breadcrumb
+  //   </Typography>
+  // ]
 
   return (
     <div className="header">
       <section className="logo">
         <img src={logo} alt="logo" className="logo" />
-        <Stack spacing={2}>
+        {/* <Stack spacing={2}>
           <Breadcrumbs separator="›" aria-label="breadcrumb">
             {breadcrumbs}
           </Breadcrumbs>
-        </Stack>
+        </Stack> */}
       </section>
       <section className="lang">
         <div onClick={() => onClickSwitch('bg')} style={lang === 'bg' ? { opacity: 0.5 } : {}}>

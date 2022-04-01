@@ -70,7 +70,7 @@ function TwoLbls() {
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
-            <span className="label">L1 =</span>
+            <span className="label">L1&nbsp;=</span>
             <div className="labelInpt">
               <label htmlFor="l1">{t('ДължинаПреденЕтикет')}</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
@@ -83,7 +83,7 @@ function TwoLbls() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L0 =</span>
+            <span className="label">L0&nbsp;=</span>
             <div className="labelInpt">
               <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
@@ -96,7 +96,7 @@ function TwoLbls() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L2 =</span>
+            <span className="label">L2&nbsp;=</span>
             <div className="labelInpt">
               <label htmlFor="l2">{t('ДължинаЗаденЕтикет')}</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />

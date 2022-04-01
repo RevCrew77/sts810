@@ -59,3 +59,43 @@ h3 {
   height: 100%;
   transition: all 0.25s ease 0s;
 }
+
+@media screen and (max-device-width: 480px) {
+  .app{
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    width: 100%;
+    margin: 0px
+  }
+
+  .app div{
+    width: auto;
+    height: 350px;
+    margin-left: 35px;
+  }
+
+  .link{
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+    width: 320px;
+    height: 380px;
+    display: inline-block;
+  }
+
+  .content{
+    box-sizing: border-box;
+  }
+
+  h3{
+    font-size: 25px;
+  }
+
+
+  .link .imageWrapper {
+    height: 230px;
+    width: 230px;
+    margin: 0px;
+    padding: 0px;
+  }
+}

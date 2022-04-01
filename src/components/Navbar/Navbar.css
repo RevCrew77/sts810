@@ -9,7 +9,6 @@
 .logo {
   height: 171px;
   margin: 20px 20px 0px 20px;
-  
 }
 
 .lang {
@@ -20,4 +19,28 @@
 
 .bg {
   margin-right: 20px;
+}
+
+@media screen and (max-device-width: 480px) {
+  .header {
+    height: 200px;
+    width: 100%;
+  }
+
+  .logo {
+    height: 90px;
+    width: 170px;
+  }
+
+  .bg {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 0px;
+  }
+
+  .en {
+    width: 60px;
+    height: 40px;
+    margin-bottom: 0px;
+  }
 }

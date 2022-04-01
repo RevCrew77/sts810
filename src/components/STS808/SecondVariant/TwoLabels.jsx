@@ -33,7 +33,7 @@ function TwoLabels() {
     if (_first && !(_first > 25 && _first < 520)) setOpen((open) => ({ ...open, first: true }))
     else setOpen((open) => ({ ...open, first: false }))
 
-    if (_second && !(_second > 25 && _second < 520)) setOpen((open) => ({ ...open, second: true }))
+    if (_second && !(_second > 25 && _second < 520)) setOpen((open) => ({ ...open, second: true })) 
     else setOpen((open) => ({ ...open, second: false }))
 
     if (_diameter && !(_diameter > 25 && _diameter < 160)) setOpen((open) => ({ ...open, diameter: true }))
@@ -140,7 +140,7 @@ function TwoLabels() {
         </div>
         <div className="labelcontainer">
           <div className="labelcalc">
-            <span className="label">L1 =</span>
+            <span className="label">L1&nbsp;=&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="l1">{t('ДължинаПреденЕтикет')}</label>
               <input name="l1" className="a" onChange={(e) => setFirst(e.target.value)} value={first} type="number" />
@@ -157,7 +157,7 @@ function TwoLabels() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L0 =</span>
+            <span className="label">L0&nbsp;=&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="l0">{t('ПроцепМуЕтикет')}</label>
               <input name="l0" className="a" onChange={(e) => setEmpty(e.target.value)} value={empty} type="number" />
@@ -170,7 +170,7 @@ function TwoLabels() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">L2 =</span>
+            <span className="label">L2&nbsp;=&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="l2">{t('ДължинаЗаденЕтикет')}</label>
               <input name="l2" className="a" onChange={(e) => setSecond(e.target.value)} value={second} type="number" />
@@ -187,7 +187,7 @@ function TwoLabels() {
             <span className="mm">mm</span>
           </div>
           <div className="labelcalc">
-            <span className="label">D =&nbsp;&nbsp;</span>
+            <span className="label">&nbsp;D&nbsp;=&nbsp;&nbsp;</span>
             <div className="labelInpt">
               <label htmlFor="D">{t('ДиаметърСъд')}</label>
               <input
