@@ -1,0 +1,9 @@
+@media screen and (max-device-width: 480px) {
+    .calc{
+        padding-top: 5px;
+    }
+
+    .imageLabelC{
+        margin-left: 40px;
+    }
+}

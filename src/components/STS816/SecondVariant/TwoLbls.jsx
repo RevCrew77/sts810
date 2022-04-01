@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import twolabel from '../../../pictures/sts810-2labels.png'
-// import './TwoLbls.css'
+import './TwoLbls.css'
 import CountUp from 'react-countup'
 import { useTranslation } from 'react-i18next'
 
