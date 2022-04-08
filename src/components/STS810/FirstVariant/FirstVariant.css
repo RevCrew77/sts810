@@ -131,7 +131,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
   .forma{
     padding: 0px;
   }
@@ -144,5 +145,21 @@ input::-webkit-inner-spin-button {
 
   .imageLabelA{
     margin: 0px 0px 0px 50px;
+  }
+}
+
+@media screen and (min-device-width: 480px) and (max-device-width: 768px) {
+  .imageLabelA{
+    margin: 0px 0px 0px 20px;
+  }
+}
+
+@media screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+  .imageLabelA{
+    margin: 0px 0px 0px 20px;
+  }
+  
+  .offset{
+    margin-left: 20px;
   }
 }
